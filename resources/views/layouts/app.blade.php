@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>taskBoard</title>
+        <title>TaskBoard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
@@ -18,6 +18,7 @@
             {{-- エラーメッセージ --}}
             @include('commons.error_tasks')
 
+            {{-- 継承先@section('content') --}}
             @yield('content')
         </div>
 

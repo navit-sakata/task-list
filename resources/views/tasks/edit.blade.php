@@ -3,11 +3,11 @@
 @section('content')
 
     <div class="prose ml-4">
-        <h2>id: {{ $task->id }} のメッセージ編集ページ</h2>
+        <h2>id: {{ $task->id }} メッセージ編集ページ</h2>
     </div>
 
     <div class="flex justify-center">
-        <form method="POST" action="{{ route('tasks.update', $task->id) }}" class="w-1/2">
+        <form method="POST" action="{{ route('task.update', $task->id) }}" class="w-1/2">
             @csrf
             @method('PUT')
 

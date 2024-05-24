@@ -17,11 +17,13 @@ class TasksController extends Controller
     public function index()
     {
         // メッセージ一覧を取得
-        $tasks = Task::all();         // 追加
+        $task = Task::all();         // 追加
+
+//dd($task);
 
         // メッセージ一覧ビューでそれを表示
         return view('tasks.index', [     // 追加
-            'tasks ..' => $tasks,        // 追加
+            'tasks' => $task,        // 追加
         ]);                                 // 追加
     }
 
@@ -48,7 +50,13 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // メッセージを作成
+        $task = new Task;
+        $task->content = $request->content;
+        $task->save();
+
+        // トップページへリダイレクトさせる
+        return redirect('/');
     }
 
     /**
@@ -63,7 +71,7 @@ class TasksController extends Controller
         $task = Task::findOrFail($id);
 
         // メッセージ詳細ビューでそれを表示
-        return view('task.show', [
+        return view('tasks.show', [
             'task' => $task,
         ]);
     }

@@ -15,7 +15,7 @@ Route::get('/', [TasksController::class, 'index']);
 Route::resource('task', TasksController::class);
 // CRUD
 // // メッセージの個別詳細ページ表示
-// Route::get('task/{id}', [TasksController::class, 'show']);
+// Route::get('task/{id}', [TasksCocd ntroller::class, 'show']);
 // // メッセージの新規登録を処理（新規登録画面を表示するためのものではありません）
 // Route::post('task', [TasksController::class, 'store']);
 // // メッセージの更新処理（編集画面を表示するためのものではありません）
